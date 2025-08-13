@@ -57,12 +57,34 @@ uv run ruff check --fix src/ tests/
 - **MyPy**: Static type checker configured for Python 3.12
 - **Pytest**: Testing framework
 
+## Current Features
+
+### Simple PDF Processor
+- **Location**: `src/doc_codification/core/simple_pdf_processor.py`
+- **Functionality**: Downloads PDFs from URLs and extracts text with line numbers
+- **Features**:
+  - URL-based PDF downloading with SSL fallback for government sites
+  - Text extraction using pdfplumber
+  - Line-by-line numbering system
+  - Multi-page processing support
+  - Unicode handling (with known limitations for some scripts)
+
+### Usage Example
+```python
+from doc_codification.core.simple_pdf_processor import process_pdf_from_url
+
+# Process Karnataka Act PDF
+url = "https://dpal.karnataka.gov.in/storage/pdf-files/53%20of%202020%20(E)%2001%20of%202022.pdf"
+process_pdf_from_url(url)
+```
+
 ## Development Workflow
 
 1. Always run formatting before committing: `uv run black src/ tests/`
 2. Check for linting issues: `uv run ruff check src/ tests/`
 3. Run type checking: `uv run mypy src/`
 4. Run tests to verify changes: `uv run pytest`
+5. Run specific test file: `uv run pytest tests/test_simple_pdf_processor.py`
 
 ## Key Configuration
 

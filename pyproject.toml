@@ -4,7 +4,10 @@ version = "0.1.0"
 description = "A Python package for document codification and processing"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "requests>=2.31.0",
+    "pdfplumber>=0.10.0",
+]
 
 [project.optional-dependencies]
 dev = [
