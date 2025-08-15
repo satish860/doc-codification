@@ -92,3 +92,6 @@ The project uses pyproject.toml for all configuration:
 - Build system: hatchling
 - Development dependencies are under `[project.optional-dependencies]`
 - Tool configurations for black, ruff, and mypy are included
+- GPT-5 is the latest model and it has 4 million context length. Also it August 2025
+- Use uv for running and managing dependencies
+- Dont use Emoji in code.
